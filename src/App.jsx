@@ -9,23 +9,12 @@ import "./App.css"
 import CookieCounter from "./components/CookieCounter";
 
 export default function App () {
-  // I need TWO state variable to store 2 values --> one state to track the number of cookies, and one state to track the cookies per second (cps)
-
-  
-
-  // this block of code is very useful. What does it do?
-
-
-
-  // We need some logic for the shop upgrades (cookies go down, cps goes up )
-  // Write you logic here 
 
   return (
     <>
-      <h1>Cookie Clicker Game </h1>
+      <h1 className="header">Cookie Clicker Game </h1>
       <CookieCounter/>
-      {/* <ShopItems/> */}
-      {/* <ShopFromApi/> */}
+
 
       {/* We need an element to interact with the user */}
       {/* We need elements to render our cookies and cps for the user to see the values displayed */}

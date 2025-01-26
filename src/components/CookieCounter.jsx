@@ -1,3 +1,4 @@
+import "./CookieCounter.css"
 import { useEffect, useState } from "react";
 // import { cookieData } from "../lib/cookieData";
 import ShopItemSection from "./ShopItemSection"
@@ -38,17 +39,24 @@ export default function CookieCounter () {
         }
 
     return (
-        <>
-            <h1>You have {cookies} cookies</h1>
+        
+        <div>
+            <div className="text-container">
+            <h1 className="cookies">You have {cookies} cookies</h1>
             <button onClick={handleClick}>Click me for a cookie 🍪</button>
-            <p>You are currently gaining {cps} cookies per second </p>
+            <p className="cps">You are currently gaining {cps} cookies per second </p>
             <button onClick={reset}>Reset</button>
+            </div>
+        
+            <>
             <ShopFromApi
                 cookies={cookies}
                 setCookies={setCookies}
                 setCps={setCps}
             />
-        </>
+            </>
+        </div>
+        
     )
 }
 

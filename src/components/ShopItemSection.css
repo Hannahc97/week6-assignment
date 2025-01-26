@@ -1,0 +1,27 @@
+.shop-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap
+    background-color #C62300;
+    border-radius: 10px;
+} 
+
+h3 {
+    margin: 10px;
+    padding: 10px;
+    font-size: 2rem;
+}
+
+p {
+    margin: 10px;
+    padding: 10px;
+    font-size: 2rem;
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    font-family: Atma;
+    font-size: 2rem;
+}

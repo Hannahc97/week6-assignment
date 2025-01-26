@@ -6,4 +6,17 @@
     padding: 0px;
     box-sizing: border-box;
     background-color: #F14A00;
+    font-family: Atma;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    font-family: Rubik Puddles;
+    text-align: center;
+    background-color: #500073;
+    padding: 10px;
+    color: #C62300;
+    border-radius: 10px;
+    font-size: 4rem;
 }

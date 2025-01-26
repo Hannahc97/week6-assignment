@@ -1,3 +1,5 @@
+import "./ShopItemSection.css"
+
 export default function ShopItemSection (props) {
 
     console.log(props)
@@ -5,6 +7,9 @@ export default function ShopItemSection (props) {
     const {id, upgradeName, upgradeCost, upgradeIncrease, cookies, setCookies, setCps} = props 
     // tried destructuring
     //changed name to 'upgradeName' - reassigned variable (name) to a different name (upgradeName)
+
+    // We need some logic for the shop upgrades (cookies go down, cps goes up )
+    // Write you logic here 
 
     function handlePurchase() {
         if (cookies >= upgradeCost) {
@@ -14,13 +19,13 @@ export default function ShopItemSection (props) {
     }
 
     return (
-        <>
-            <h3>{id}</h3>
-            <h3>{upgradeName}</h3>
-            <p>Cost: {upgradeCost} cookies</p>
-            <p>Increase: +{upgradeIncrease}</p>
-            <button onClick={handlePurchase}>Buy</button>
-        </>
+            <div className="shop-container">
+                <h3>{id}</h3>
+                <h3>{upgradeName}</h3>
+                <p>Cost: {upgradeCost} cookies</p>
+                <p>Increase: +{upgradeIncrease}</p>
+                <button onClick={handlePurchase}>Buy</button>
+            </div>
     )
 }
 
