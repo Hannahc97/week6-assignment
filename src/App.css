@@ -1,2 +1,9 @@
 /* remember to make your app accessible and add media queries */
 /* The root pseudo class  */
+
+:root{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: #F14A00;
+}

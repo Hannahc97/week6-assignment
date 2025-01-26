@@ -1,10 +1,8 @@
-import { useEffect } from "react";
-
-import { useState } from "react";
+import { useEffect, useState  } from "react";
 import ShopItemSection from "./ShopItemSection";
 
 
-export default function ShopFromApi (){
+export default function ShopFromApi ({cookies, setCookies, setCps}){
 
     const [shopItems, setShopItems] = useState([]);
     const [message, setMessage] = useState("Fetching items..."); 
@@ -32,7 +30,10 @@ export default function ShopFromApi (){
                 key={items.id}
                 upgradeName={items.name}
                 upgradeCost={items.cost}
-                upgradeIncrease={items.increase} />
+                upgradeIncrease={items.increase}
+                cookies={cookies}
+                setCookies={setCookies}
+                setCps={setCps}/>
                 ))
             }        
         </>
