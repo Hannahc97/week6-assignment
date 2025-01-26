@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { cookieData } from "../lib/cookieData";
+import ShopItemSection from "./ShopItemSection"
+
 
 // I need TWO state variable to store 2 values --> 
 // one state to track the number of cookies
@@ -8,30 +10,46 @@ import { cookieData } from "../lib/cookieData";
 
 export default function CookieCounter () {
 
-    const [cookies, setCookies] = useState(100) // useState() cookies = number of cookies 
+    const [cookies, setCookies] = useState(1000) // useState() cookies = number of cookies 
+    const [cps, setCps] = useState(0) // useState() --> cookies per second 
+    
     console.log(`You have ${cookies} cookies`)
-
-    const [cps, setCps] = useState(5) // useState()
+    console.log(`The CPS is: ${cps}`)
 
 
     useEffect(() => {
         const myInterval = setInterval(() => {
-            setCookies((currentCookies)=> {currentCookies + cps})
-        }, 1000);
+            setCookies((currentCookies) => currentCookies + cps);
+            }, 1000);
+            return () => {
+                clearInterval(myInterval);};
+            }, [cps]);
 
-        return () => {
-            clearInterval(myInterval)
+
+        function handleClick(){
+            setCookies((currentCookies) => currentCookies + 1)
         }
-        }, [cps, cookies]); 
-
-
-    
 
     return (
         <>
             <h1>You have {cookies} cookies</h1>
-            <button onClick={() => setCookies((currentCookies) => currentCookies + 1)}>Click me for a cookie 🍪</button>
+            <button onClick={handleClick}>Click me for a cookie 🍪</button>
             <p>You are currently gaining {cps} cookies per second </p>
+                        {cookieData.map((cookieDataItem) => {
+                            return (
+                                <ShopItemSection
+                                key={cookieDataItem.id}
+                                name={cookieDataItem.name}
+                                cost={cookieDataItem.cost}
+                                increase={cookieDataItem.increase}
+                                cookies={cookies} // Pass cookies as a prop
+                                setCookies={setCookies} // Pass setCookies as a prop
+                                setCps={setCps}
+                                // {...cookieDataItem} --> alternative way, using spreading
+                                />
+                            )
+                        })
+                    }
         </>
     )
 }

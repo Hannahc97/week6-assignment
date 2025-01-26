@@ -2,8 +2,24 @@ export default function ShopItemSection (props) {
 
     console.log(props)
 
-    const {id, name: upgradeName, cost, increase} = props // tried destructuring
+    const {id, name: upgradeName, cost, increase, cookies, setCookies, setCps} = props // tried destructuring
     //changed name to 'upgradeName' - reassigned variable (name) to a different name (upgradeName)
+
+    // function handlePurchase (){
+    //     if (cookies >= cost) {
+    //         setCookies((prevCookies) => prevCookies - cost)
+    //         setCps((prevCps)=>prevCps + increase)
+    //     }
+    // }
+
+    function handlePurchase() {
+        if (cookies >= cost) {
+            // Deduct the cost of the upgrade
+            setCookies((prevCookies) => prevCookies - cost);
+            // Increase the CPS (cookies per second)
+            setCps((prevCps) => prevCps + increase);
+        }
+    }
 
     return (
         <>
@@ -11,7 +27,7 @@ export default function ShopItemSection (props) {
             <h3>{upgradeName}</h3>
             <p>Cost: {cost} cookies</p>
             <p>Increase: +{increase}</p>
-            <button>Buy</button>
+            <button onClick={handlePurchase}>Buy</button>
         </>
     )
 }
