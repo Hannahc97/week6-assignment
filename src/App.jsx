@@ -12,7 +12,7 @@ export default function App () {
 
   return (
     <>
-      <h1 className="header">Cookie Clicker Game </h1>
+      <h1 className="header">🍪 Cookie Clicker Game 🍪</h1>
       <CookieCounter/>
 
 
