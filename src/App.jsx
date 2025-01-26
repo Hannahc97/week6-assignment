@@ -3,9 +3,6 @@
 // We need an element to store our upgrades --> either a local file (like I did in a list & keys demo) or fetch them for the API (stretch goal)
 import "./App.css"
 
-// import ShopFromApi from "./components/ShopFromApi"
-// import ShopItems from "./components/ShopItems";
-// import ShopItemSection from "./components/ShopItemSection";
 import CookieCounter from "./components/CookieCounter";
 
 export default function App () {
