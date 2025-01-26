@@ -3,9 +3,10 @@
 // We need an element to store our upgrades --> either a local file (like I did in a list & keys demo) or fetch them for the API (stretch goal)
 
 import { useEffect, useState } from "react";
-import CookieButton from "./components/CookieButton";
+// import CookieButton from "./components/CookieButton";
 import ShopItems from "./components/ShopItems";
 import ShopItemSection from "./components/ShopItemSection";
+import CookieCounter from "./components/CookieCounter";
 
 export default function App () {
   // I need TWO state variable to store 2 values --> one state to track the number of cookies, and one state to track the cookies per second (cps)
@@ -24,7 +25,7 @@ export default function App () {
   return (
     <>
       <h1>Cookie Clicker Game </h1>
-      <CookieButton/>
+      <CookieCounter/>
       <ShopItems/>
 
       {/* We need an element to interact with the user */}

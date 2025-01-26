@@ -15,7 +15,7 @@ export default function ShopItems () {
                         name={cookieDataItem.name}
                         cost={cookieDataItem.cost}
                         increase={cookieDataItem.increase}
-                        // {...cookieDataItem} --> alternative way, using spreading 
+                        // {...cookieDataItem} --> alternative way, using spreading
                         />
                     )
                 })
